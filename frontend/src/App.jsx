@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./components/ProfilePage";
 import Job from "./components/Job";
@@ -27,13 +27,15 @@ export default function App() {
     setPage("login");
   };
 
-  // Render correct page
   return (
     <>
       {page === "login" && <LoginPage onLogin={handleLogin} />}
-      {page === "profile" && <ProfilePage onProfileComplete={handleProfileComplete} />}
-      {page === "jobs" && <Job onLogout={handleLogout} onViewApplications={() => setPage("applications")} />}
-      {page === "applications" && <MyApplications onBack={() => setPage("jobs")} />}
+      {page === "profile" && (
+        <ProfilePage onProfileComplete={handleProfileComplete} />
+      )}
+      {page === "jobs" && <Job onLogout={handleLogout} />}
+      {page === "applications" && <MyApplications />}
     </>
   );
 }
+

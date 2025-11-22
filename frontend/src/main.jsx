@@ -1,29 +1,14 @@
-import React, { useState } from "react";
-import LoginPage from "./components/LoginPage";
-import ProfilePage from "./components/ProfilePage";
-import JobsPage from "./components/JobsPage";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
 
-const App = () => {
-  const [step, setStep] = useState("login");
-  const [userEmail, setUserEmail] = useState("");
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-  const handleLogin = (email) => {
-    setUserEmail(email);
-    setStep("profile");
-  };
-
-  const handleProfileComplete = () => setStep("jobs");
-
-  return (
-    <>
-      {step === "login" && <LoginPage onLogin={handleLogin} />}
-      {step === "profile" && (
-        <ProfilePage onProfileComplete={handleProfileComplete} />
-      )}
-      {step === "jobs" && <JobsPage userEmail={userEmail} />}
-    </>
-  );
-};
 
 export default App;
 
