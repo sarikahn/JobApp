@@ -1,134 +1,65 @@
-/* ===== Reset ===== */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body, html, #root {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
 }
 
-/* ===== Login Page ===== */
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.login-box {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 350px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* ===== Profile Page ===== */
+/* Login & Profile Shared */
+.login-page,
 .profile-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  position: relative;
+  padding: 20px;
 }
 
+/* Profile Form */
 .profile-form-container {
   background: rgba(255,255,255,0.95);
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
-  z-index: 10;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* ===== Jobs Layout ===== */
+.profile-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Jobs Layout (duplicate removed) */
 .content {
   display: flex;
   gap: 20px;
   padding: 20px;
 }
 
-/* Filters */
 .filters {
-  flex: 0 0 250px;
+  width: 250px;
   background: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  height: 70vh;
-  overflow-y: auto;
+  padding: 16px;
+  border-radius: 12px;
 }
 
-/* Job List */
-.job-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  overflow-y: auto;
-}
-
-/* Job Card */
-.job-card {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: 100%;
-}
-
-/* ===== Responsive Fixes ===== */
-@media (max-width: 1024px) {
+/* Responsive Fix */
+@media (max-width: 800px) {
   .content {
     flex-direction: column;
+    padding: 10px;
   }
 
   .filters {
     width: 100%;
-    height: auto;
-    position: relative;
   }
 }
-
-@media (max-width: 768px) {
-  .search-bar input {
-    width: 95%;
-  }
-}
-
-@media (max-width: 480px) {
-  .job-card {
-    padding: 12px;
-  }
-
-  .filters {
-    padding: 15px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
